@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="video"
+            type="com.arun.livestreamsample.pojo.VideoFile" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:cardCornerRadius="@dimen/size_10dp"
+        app:contentPadding="@dimen/size_10dp"
+        android:layout_margin="@dimen/size_5dp"
+        app:elevation="@dimen/size_2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iVThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@{video.dataTitle}"
+                app:viewAspectRatio="1.6"/>
+
+            <TextView
+                android:id="@+id/tVTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_marginBottom="@dimen/size_10dp"
+                android:text="@{video.dataTitle}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tVScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_score"
+                    android:drawablePadding="@dimen/size_5dp"
+                    android:gravity="center"
+                    android:text="@{video.dataScore}"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="@dimen/text_size_12"
+                    android:layout_marginEnd="@dimen/size_20dp"/>
+
+                <TextView
+                    android:id="@+id/tVTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_time"
+                    android:drawablePadding="@dimen/size_5dp"
+                    android:gravity="center"
+                    android:text="@{video.dataTime}"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="@dimen/text_size_12" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

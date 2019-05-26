@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <ProgressBar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/loading_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_50dp"
+        android:indeterminateTint="@android:color/holo_red_light"
+        android:indeterminateTintMode="src_atop" />
+</layout>
