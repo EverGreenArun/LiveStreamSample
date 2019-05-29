@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "com.arun.livestreamsample"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -34,9 +34,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlinVersion"
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
-    implementation 'androidx.media:media:1.0.1'
     implementation "androidx.core:core-ktx:$rootProject.ktxCoreVersion"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
     implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
@@ -54,8 +53,6 @@ dependencies {
     implementation "com.google.android.exoplayer:exoplayer:$rootProject.exoplayerVersion"
 
 
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation "junit:junit:$rootProject.junitVersion"
     androidTestImplementation "androidx.test:runner:$rootProject.testRunneVersionr"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
